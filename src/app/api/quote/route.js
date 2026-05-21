@@ -1,19 +1,9 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-export const runtime = 'nodejs'; // nodemailer requires the Node.js runtime
+export const runtime = 'nodejs';
 
-interface QuotePayload {
-  fullName: string;
-  email: string;
-  phone: string;
-  serviceType: string;
-  propertyType: string;
-  city: string;
-  details?: string;
-}
-
-function escapeHtml(s: string) {
+function escapeHtml(s) {
   return String(s)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -22,33 +12,32 @@ function escapeHtml(s: string) {
     .replace(/'/g, '&#39;');
 }
 
-function validate(b: Partial<QuotePayload>): { ok: true; data: QuotePayload } | { ok: false; message: string } {
-  const required = ['fullName', 'email', 'phone', 'serviceType', 'propertyType', 'city'] as const;
+function validate(b) {
+  const required = ['fullName', 'email', 'phone', 'serviceType', 'propertyType', 'city'];
   for (const k of required) {
     if (!b[k] || typeof b[k] !== 'string' || !String(b[k]).trim()) {
       return { ok: false, message: `Missing field: ${k}` };
     }
   }
-  // Loose email check
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(b.email!)) {
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(b.email)) {
     return { ok: false, message: 'Please enter a valid email address.' };
   }
   return {
     ok: true,
     data: {
-      fullName: b.fullName!.trim(),
-      email: b.email!.trim(),
-      phone: b.phone!.trim(),
-      serviceType: b.serviceType!.trim(),
-      propertyType: b.propertyType!.trim(),
-      city: b.city!.trim(),
+      fullName: b.fullName.trim(),
+      email: b.email.trim(),
+      phone: b.phone.trim(),
+      serviceType: b.serviceType.trim(),
+      propertyType: b.propertyType.trim(),
+      city: b.city.trim(),
       details: b.details?.trim() || '',
     },
   };
 }
 
-export async function POST(req: NextRequest) {
-  let body: Partial<QuotePayload>;
+export async function POST(req) {
+  let body;
   try {
     body = await req.json();
   } catch {

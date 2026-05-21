@@ -11,12 +11,10 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // Close the mobile menu whenever the route changes
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
-  // Lock body scroll while the mobile drawer is open
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => {
@@ -24,7 +22,7 @@ export default function Navbar() {
     };
   }, [open]);
 
-  const isActive = (href: string) =>
+  const isActive = (href) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href);
 
   return (

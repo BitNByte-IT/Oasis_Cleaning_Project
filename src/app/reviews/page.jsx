@@ -1,9 +1,8 @@
 import { Star, MessageCircle, ArrowRight } from 'lucide-react';
 import Ornament from '@/components/ui/Ornament';
-import { getGoogleReviews, type GoogleReview } from '@/lib/google-reviews';
+import { getGoogleReviews } from '@/lib/google-reviews';
 import site from '@/data/site.json';
 
-// Re-generate this page at most once per week (matches the Google API cache)
 export const revalidate = 604800;
 
 export const metadata = {
@@ -12,8 +11,7 @@ export const metadata = {
     'See what our customers say about Oasis Cleaning of Austin. Live reviews from Google.',
 };
 
-/** Small colored Google "G" badge */
-function GoogleBadge({ className = 'h-7 w-7' }: { className?: string }) {
+function GoogleBadge({ className = 'h-7 w-7' }) {
   return (
     <svg viewBox="0 0 48 48" className={className} aria-hidden>
       <path
@@ -36,7 +34,7 @@ function GoogleBadge({ className = 'h-7 w-7' }: { className?: string }) {
   );
 }
 
-function Stars({ count }: { count: number }) {
+function Stars({ count }) {
   return (
     <div className="flex items-center gap-1 text-brand-gold" aria-label={`${count} out of 5 stars`}>
       {Array.from({ length: 5 }).map((_, i) => (
@@ -49,11 +47,11 @@ function Stars({ count }: { count: number }) {
   );
 }
 
-function getInitial(name: string) {
+function getInitial(name) {
   return (name?.trim()?.[0] || '?').toUpperCase();
 }
 
-function ReviewCard({ review }: { review: GoogleReview }) {
+function ReviewCard({ review }) {
   return (
     <article className="card-bordered flex flex-col p-5">
       <header className="flex items-start justify-between gap-3">

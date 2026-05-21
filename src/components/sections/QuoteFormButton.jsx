@@ -5,19 +5,7 @@ import { X, Send, Lock, FileText, Loader2, CheckCircle2, AlertCircle } from 'luc
 import Ornament from '@/components/ui/Ornament';
 import services from '@/data/services.json';
 
-type Status = 'idle' | 'submitting' | 'success' | 'error';
-
-interface FormData {
-  fullName: string;
-  email: string;
-  phone: string;
-  serviceType: string;
-  propertyType: string;
-  city: string;
-  details: string;
-}
-
-const initialForm: FormData = {
+const initialForm = {
   fullName: '',
   email: '',
   phone: '',
@@ -29,14 +17,13 @@ const initialForm: FormData = {
 
 export default function QuoteFormButton() {
   const [open, setOpen] = useState(false);
-  const [status, setStatus] = useState<Status>('idle');
+  const [status, setStatus] = useState('idle');
   const [errorMsg, setErrorMsg] = useState('');
-  const [form, setForm] = useState<FormData>(initialForm);
+  const [form, setForm] = useState(initialForm);
 
-  // Close on ESC + lock body scroll
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
+    const onKey = (e) => {
       if (e.key === 'Escape') setOpen(false);
     };
     document.body.style.overflow = 'hidden';
@@ -49,7 +36,6 @@ export default function QuoteFormButton() {
 
   const close = () => {
     setOpen(false);
-    // small delay so the closing animation doesn't visibly reset
     setTimeout(() => {
       if (status === 'success') {
         setForm(initialForm);
@@ -58,10 +44,10 @@ export default function QuoteFormButton() {
     }, 300);
   };
 
-  const update = (k: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+  const update = (k) => (e) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e) {
     e.preventDefault();
     setStatus('submitting');
     setErrorMsg('');
@@ -85,7 +71,6 @@ export default function QuoteFormButton() {
 
   return (
     <>
-      {/* Trigger button (matches "GET A FREE QUOTE" outline button in mockup) */}
       <button
         type="button"
         onClick={() => setOpen(true)}
@@ -274,19 +259,10 @@ export default function QuoteFormButton() {
   );
 }
 
-// Reusable input class
 const inputClass =
   'w-full rounded-lg border border-brand-border bg-brand-bg/60 px-3 py-2.5 text-sm text-white placeholder:text-brand-textDim focus:border-brand-teal focus:outline-none focus:ring-1 focus:ring-brand-teal transition-colors';
 
-function Field({
-  label,
-  required,
-  children,
-}: {
-  label: string;
-  required?: boolean;
-  children: React.ReactNode;
-}) {
+function Field({ label, required, children }) {
   return (
     <label className="block">
       <span className="mb-1.5 block text-sm font-medium text-white">

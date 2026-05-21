@@ -5,15 +5,13 @@ import Ornament from '@/components/ui/Ornament';
 import home from '@/data/home.json';
 import site from '@/data/site.json';
 
-// Map icon string -> lucide component
-const featureIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+const featureIcons = {
   sparkles: Sparkles,
   'shield-check': ShieldCheck,
   user: User,
   home: Home,
 };
 
-// Page is fully static — generated at build time for fastest load
 export const dynamic = 'force-static';
 
 export default function HomePage() {
@@ -51,7 +49,6 @@ export default function HomePage() {
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
               />
-              {/* left-side fade so the image bleeds into the dark page */}
               <div
                 className="pointer-events-none absolute inset-0"
                 style={{
@@ -87,7 +84,6 @@ export default function HomePage() {
           })}
         </div>
 
-        {/* vertical divider hint - subtle separator lines like in the mockup */}
         <div aria-hidden className="mt-2 hidden lg:flex justify-around">
           {[0, 1, 2].map((i) => (
             <span key={i} className="h-px w-0" />

@@ -1,8 +1,7 @@
 import { Facebook, Instagram } from 'lucide-react';
 import site from '@/data/site.json';
 
-/** Small Google "G" SVG (lucide doesn't ship a Google icon) */
-function GoogleIcon({ className = '' }: { className?: string }) {
+function GoogleIcon({ className = '' }) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden>
       <path
@@ -13,13 +12,13 @@ function GoogleIcon({ className = '' }: { className?: string }) {
   );
 }
 
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+const iconMap = {
   facebook: Facebook,
   instagram: Instagram,
   google: GoogleIcon,
 };
 
-export default function SocialIcons({ className = '' }: { className?: string }) {
+export default function SocialIcons({ className = '' }) {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       {site.social.map((s) => {

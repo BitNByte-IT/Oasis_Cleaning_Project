@@ -1,30 +1,10 @@
 import { Phone } from 'lucide-react';
 import site from '@/data/site.json';
 
-type Variant = 'primary' | 'outline' | 'compact';
-
-interface CallButtonProps {
-  variant?: Variant;
-  className?: string;
-  label?: string;
-}
-
-/**
- * Single component that powers EVERY "Call Now" CTA in the site
- * (homepage hero, about-page sidebar, services footer banner, etc.).
- *
- * Tapping it triggers a real tel: link so mobile devices place the call
- * and desktop devices hand off to FaceTime / Skype / system handler.
- */
-export default function CallButton({
-  variant = 'primary',
-  className = '',
-  label,
-}: CallButtonProps) {
+export default function CallButton({ variant = 'primary', className = '', label }) {
   const phone = site.company.phone;
   const phoneRaw = site.company.phoneRaw;
 
-  // Each variant renders a slightly different layout but all share the tel: link
   if (variant === 'compact') {
     return (
       <a
@@ -58,7 +38,6 @@ export default function CallButton({
     );
   }
 
-  // Primary - filled teal gradient pill (homepage hero style)
   return (
     <a
       href={`tel:${phoneRaw}`}

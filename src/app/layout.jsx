@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { Playfair_Display, Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
@@ -19,7 +18,7 @@ const inter = Inter({
   weight: ['300', '400', '500', '600', '700'],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://oasiscleaningofaustin.com'),
   title: {
     default: `${site.company.name} | ${site.company.slogan}`,
@@ -45,11 +44,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="min-h-screen flex flex-col">

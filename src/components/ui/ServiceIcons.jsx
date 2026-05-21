@@ -12,10 +12,8 @@ import {
   Clock,
   Users,
 } from 'lucide-react';
-import type { ComponentType } from 'react';
 
-// Custom Home + sparkle icon for "Standard Cleaning"
-function HomeSparkle({ className }: { className?: string }) {
+function HomeSparkle({ className }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} strokeWidth={1.4}>
       <path
@@ -37,7 +35,7 @@ function HomeSparkle({ className }: { className?: string }) {
   );
 }
 
-function SparkleStar({ className }: { className?: string }) {
+function SparkleStar({ className }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} strokeWidth={1.4}>
       <path d="M12 3l1.5 5L18 9.5l-4.5 1.5L12 16l-1.5-5L6 9.5 10.5 8 12 3z" stroke="currentColor" strokeLinejoin="round"/>
@@ -46,7 +44,7 @@ function SparkleStar({ className }: { className?: string }) {
   );
 }
 
-export const serviceIcons: Record<string, ComponentType<{ className?: string }>> = {
+export const serviceIcons = {
   'home-sparkle': HomeSparkle,
   spray: SprayCan,
   box: PackageOpen,
@@ -57,7 +55,7 @@ export const serviceIcons: Record<string, ComponentType<{ className?: string }>>
   apartment: Building,
 };
 
-export const whyChooseIcons: Record<string, ComponentType<{ className?: string }>> = {
+export const whyChooseIcons = {
   shield: ShieldCheck,
   'sparkle-plus': SparkleStar,
   clock: Clock,
