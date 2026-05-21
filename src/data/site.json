@@ -1,0 +1,39 @@
+{
+  "company": {
+    "name": "Oasis Cleaning of Austin LLC",
+    "shortName": "Oasis Cleaning",
+    "slogan": "Spotless spaces. Better living.",
+    "phone": "(737) 210-3752",
+    "phoneRaw": "+17372103752",
+    "emails": [
+      "admin@oasicleaningofaustin.com",
+      "paula@oasicleaningofaustin.com"
+    ],
+    "hours": {
+      "weekdays": "Mon – Fri: 8AM – 6PM",
+      "saturday": "Sat: 9AM – 3PM",
+      "sunday": "Sun: Closed"
+    },
+    "copyright": "© 2024 Oasis Cleaning of Austin LLC. All rights reserved."
+  },
+  "navigation": [
+    { "label": "Home", "href": "/" },
+    { "label": "About Us", "href": "/about" },
+    { "label": "Reviews", "href": "/reviews" },
+    { "label": "Services", "href": "/services" }
+  ],
+  "social": [
+    { "platform": "facebook", "href": "https://facebook.com/" },
+    { "platform": "instagram", "href": "https://instagram.com/" },
+    { "platform": "google", "href": "https://google.com/" }
+  ],
+  "footerLinks": {
+    "title": "QUICK LINKS",
+    "items": [
+      { "label": "Home", "href": "/" },
+      { "label": "About Us", "href": "/about" },
+      { "label": "Reviews", "href": "/reviews" },
+      { "label": "Services", "href": "/services" }
+    ]
+  }
+}

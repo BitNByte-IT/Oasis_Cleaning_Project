@@ -1,0 +1,47 @@
+{
+  "hero": {
+    "eyebrow": "Our Cleaning",
+    "title": "Services",
+    "description": "Professional cleaning services for homes, apartments, offices, and rentals across Austin."
+  },
+  "services": [
+    { "icon": "home-sparkle", "name": "Standard Cleaning" },
+    { "icon": "spray", "name": "Deep Cleaning" },
+    { "icon": "box", "name": "Move In / Move Out Cleaning" },
+    { "icon": "luggage", "name": "Airbnb Cleaning" },
+    { "icon": "hardhat", "name": "Post-Construction Cleaning" },
+    { "icon": "office", "name": "Commercial / Office Cleaning" },
+    { "icon": "calendar-check", "name": "Recurring Cleaning" },
+    { "icon": "apartment", "name": "Apartment Cleaning" }
+  ],
+  "whyChooseUs": {
+    "title": "WHY CLIENTS CHOOSE OASIS CLEANING",
+    "items": [
+      { "icon": "shield", "label": "Reliable & Background Checked" },
+      { "icon": "sparkle-plus", "label": "Attention to Detail" },
+      { "icon": "clock", "label": "Flexible Scheduling" },
+      { "icon": "users", "label": "Friendly Professional Team" },
+      { "icon": "shield-check", "label": "Licensed & Insured" }
+    ]
+  },
+  "quoteForm": {
+    "serviceTypes": [
+      "Standard Cleaning",
+      "Deep Cleaning",
+      "Move In / Move Out Cleaning",
+      "Airbnb Cleaning",
+      "Post-Construction Cleaning",
+      "Commercial / Office Cleaning",
+      "Recurring Cleaning",
+      "Apartment Cleaning"
+    ],
+    "propertyTypes": [
+      "House",
+      "Apartment",
+      "Condo",
+      "Office",
+      "Airbnb / Short-term Rental",
+      "Other"
+    ]
+  }
+}

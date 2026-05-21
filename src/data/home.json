@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "titleLine1": "We Clean.",
+    "titleLine2": "You Relax.",
+    "description": "Professional cleaning services for homes and businesses in Austin."
+  },
+  "features": [
+    {
+      "icon": "sparkles",
+      "title": "Spotless Results",
+      "description": "We leave every space clean, fresh, and impeccable."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Trusted & Reliable",
+      "description": "You can count on us to show up and get the job done."
+    },
+    {
+      "icon": "user",
+      "title": "Friendly Team",
+      "description": "Our team is professional, background-checked, and easy to work with."
+    },
+    {
+      "icon": "home",
+      "title": "Homes & Offices",
+      "description": "We clean homes, offices, and more with care."
+    }
+  ],
+  "licensedBanner": {
+    "title": "LICENSED & INSURED",
+    "description": "Peace of mind with every clean."
+  }
+}
