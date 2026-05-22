@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const h=require\\('./src/data/home.json'\\); console.log\\(JSON.stringify\\(h.licensedBanner, null, 2\\)\\)\")",
+      "Bash(node -e \"const a=require\\('./src/data/about.json'\\); console.log\\(JSON.stringify\\(a, null, 2\\)\\)\")"
+    ]
+  }
+}
