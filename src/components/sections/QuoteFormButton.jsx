@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { X, Send, Lock, FileText, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
-import Ornament from '@/components/ui/Ornament';
 import services from '@/data/services.json';
 
 const initialForm = {
@@ -106,11 +105,18 @@ export default function QuoteFormButton() {
               <X className="h-5 w-5" />
             </button>
 
-            <div className="text-center">
-              <h2 id="quote-title" className="font-display text-3xl">
-                Get a <span className="text-brand-teal">Free Quote</span>
-              </h2>
-              <Ornament className="mt-2" width="sm" />
+            <div className="flex flex-col items-center text-center">
+              {/* w-fit wrapper so ornament spans exactly the heading text width */}
+              <div className="w-fit">
+                <h2 id="quote-title" className="font-display text-3xl">
+                  Get a <span className="text-brand-teal">Free Quote</span>
+                </h2>
+                <div className="mt-2 flex w-full items-center gap-3">
+                  <span className="block h-px flex-1 bg-brand-gold/70" />
+                  <span className="block h-2 w-2 shrink-0 rotate-45 bg-brand-gold" />
+                  <span className="block h-px flex-1 bg-brand-gold/70" />
+                </div>
+              </div>
               <p className="mt-3 text-sm text-brand-textMuted">
                 Fill out the form below and we&apos;ll get back to you with a free, no-obligation quote.
               </p>

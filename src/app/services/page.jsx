@@ -34,7 +34,7 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl lg:aspect-[5/4]">
+        <div className="relative aspect-[4/3] w-full overflow-hidden lg:aspect-[5/4]">
           <Image
             src="/images/services-kitchen.png"
             alt="Dark luxury kitchen with marble island"
@@ -42,6 +42,21 @@ export default function ServicesPage() {
             priority
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover"
+          />
+          {/* Blend edges into dark background — left, top, bottom */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(to right, #000 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0) 45%)',
+            }}
+          />
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(to bottom, #000 0%, rgba(0,0,0,0) 15%, rgba(0,0,0,0) 85%, #000 100%)',
+            }}
           />
         </div>
       </section>
@@ -60,7 +75,7 @@ export default function ServicesPage() {
                 key={service.name}
                 className="card-bordered flex aspect-square flex-col items-center justify-center gap-3 p-4 hover:shadow-teal-glow"
               >
-                {Icon && <Icon className="h-12 w-12 text-brand-teal" />}
+                {Icon && <Icon className="h-14 w-14 text-brand-teal" />}
                 <h3 className="text-center font-display text-base leading-tight text-white sm:text-lg">
                   {service.name}
                 </h3>
@@ -84,7 +99,7 @@ export default function ServicesPage() {
                 key={item.label}
                 className="flex flex-col items-center px-4 text-center"
               >
-                {Icon && <Icon className="h-8 w-8 text-brand-teal" />}
+                {Icon && <Icon className="h-12 w-12 text-brand-teal" />}
                 <p className="mt-3 max-w-[10rem] text-sm leading-relaxed text-brand-text">
                   {item.label}
                 </p>
