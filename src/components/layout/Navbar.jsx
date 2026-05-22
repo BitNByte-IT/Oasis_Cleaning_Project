@@ -27,8 +27,8 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-brand-border/40 bg-brand-bg/80 backdrop-blur-md">
-      <div className="container-page flex items-center justify-between py-4 lg:py-5">
-        <Logo size={140} className="shrink-0" />
+      <div className="container-page flex items-center justify-between py-2.5 lg:py-3">
+        <Logo size={120} className="shrink-0" />
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
