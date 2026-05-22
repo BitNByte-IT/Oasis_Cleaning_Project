@@ -26,9 +26,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        // Distinctive serif for display + clean sans for body
         display: ['var(--font-playfair)', 'Georgia', 'serif'],
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        script: ['var(--font-script)', 'cursive'],
       },
       backgroundImage: {
         'teal-gradient': 'linear-gradient(135deg, #3FB8C9 0%, #1F8A9C 100%)',

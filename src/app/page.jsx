@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { Sparkles, ShieldCheck, User, Home, Mail, Clock, ShieldCheck as ShieldCheckBadge } from 'lucide-react';
+import { Sparkles, ShieldCheck, User, Home, Mail, Clock, Bell } from 'lucide-react';
 import CallButton from '@/components/ui/CallButton';
-import Ornament from '@/components/ui/Ornament';
+import NewsletterForm from '@/components/sections/NewsletterForm';
 import home from '@/data/home.json';
 import site from '@/data/site.json';
 
@@ -22,12 +22,18 @@ export default function HomePage() {
         <div className="container-page grid grid-cols-1 items-center gap-10 pt-10 lg:grid-cols-2 lg:gap-12 lg:pt-16">
           {/* Left – copy */}
           <div className="order-2 lg:order-1">
-            <h1 className="font-display text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
-              <span className="block text-white">{home.hero.titleLine1}</span>
-              <span className="block text-brand-teal">{home.hero.titleLine2}</span>
-            </h1>
+            <div className="w-fit">
+              <h1 className="font-display text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
+                <span className="block text-white">{home.hero.titleLine1}</span>
+                <span className="block text-brand-teal">{home.hero.titleLine2}</span>
+              </h1>
 
-            <Ornament className="!justify-start mt-6" width="md" />
+              <div className="mt-6 flex w-full items-center gap-3">
+                <span className="block h-px flex-1 bg-brand-gold/70" />
+                <span className="block h-2 w-2 shrink-0 rotate-45 bg-brand-gold" />
+                <span className="block h-px flex-1 bg-brand-gold/70" />
+              </div>
+            </div>
 
             <p className="mt-6 max-w-md text-lg leading-relaxed text-brand-text">
               {home.hero.description}
@@ -94,9 +100,9 @@ export default function HomePage() {
       {/* ============== EMAIL + HOURS BANNER ============== */}
       <section className="container-page mt-16">
         <div className="rounded-2xl border border-brand-border bg-brand-surface/40 p-6 sm:p-8">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:divide-x md:divide-brand-border">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-[1fr_auto_1fr]">
             {/* Email block */}
-            <div className="flex items-start gap-5 md:pr-8">
+            <div className="flex items-start gap-5">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-brand-teal/60 text-brand-teal">
                 <Mail className="h-5 w-5" />
               </span>
@@ -119,8 +125,15 @@ export default function HomePage() {
               </div>
             </div>
 
+            {/* Gold ornament vertical divider */}
+            <div className="hidden md:flex flex-col items-center self-stretch py-1">
+              <span className="block w-px flex-1 bg-brand-gold/70" />
+              <span className="my-2 block h-2 w-2 shrink-0 rotate-45 bg-brand-gold" />
+              <span className="block w-px flex-1 bg-brand-gold/70" />
+            </div>
+
             {/* Hours block */}
-            <div className="flex items-start gap-5 md:pl-8">
+            <div className="flex items-start gap-5">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-brand-teal/60 text-brand-teal">
                 <Clock className="h-5 w-5" />
               </span>
@@ -142,17 +155,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============== LICENSED & INSURED BANNER ============== */}
+      {/* ============== NEWSLETTER ============== */}
       <section className="container-page mt-8">
-        <div className="flex flex-col items-center gap-4 rounded-2xl border border-brand-border bg-brand-surface/30 p-6 sm:flex-row sm:gap-6">
+        <div className="flex flex-col items-center gap-6 rounded-2xl border border-brand-border bg-brand-surface/30 p-6 sm:p-8 md:flex-row md:gap-8">
           <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-brand-teal/60 text-brand-teal">
-            <ShieldCheckBadge className="h-6 w-6" />
+            <Bell className="h-6 w-6" />
           </span>
-          <div className="text-center sm:text-left">
+          <div className="text-center md:text-left">
             <h3 className="text-sm font-semibold tracking-[0.2em] text-brand-teal">
-              {home.licensedBanner.title}
+              STAY UPDATED
             </h3>
-            <p className="mt-1 text-brand-text">{home.licensedBanner.description}</p>
+            <p className="mt-1 text-brand-text">
+              Subscribe for cleaning tips, exclusive offers, and seasonal updates.
+            </p>
+          </div>
+          <div className="w-full md:ml-auto md:w-auto">
+            <NewsletterForm />
           </div>
         </div>
       </section>
