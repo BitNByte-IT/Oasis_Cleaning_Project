@@ -36,11 +36,16 @@ function GoogleBadge({ className = 'h-7 w-7' }) {
 
 function Stars({ count }) {
   return (
-    <div className="flex items-center gap-1 text-brand-gold" aria-label={`${count} out of 5 stars`}>
+    <div className="flex items-center gap-1" aria-label={`${count} out of 5 stars`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          className={`h-4 w-4 ${i < count ? 'fill-brand-gold text-brand-gold' : 'text-brand-textDim'}`}
+          className="h-4 w-4"
+          style={
+            i < count
+              ? { fill: '#F5C518', color: '#F5C518' }
+              : { color: '#3a3f45' }
+          }
         />
       ))}
     </div>
