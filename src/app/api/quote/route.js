@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { waitUntil } from '@vercel/functions';
 import nodemailer from 'nodemailer';
 
 export const runtime = 'nodejs';
@@ -116,22 +117,18 @@ export async function POST(req) {
     `Additional Details: ${d.details || '(none)'}`,
   ].join('\n');
 
-  try {
-    await transporter.sendMail({
-      from: `"Oasis Cleaning Website" <${smtpUser}>`,
-      to: recipient,
-      replyTo: d.email,
-      subject: `New Quote Request – ${d.fullName} (${d.serviceType})`,
-      text,
-      html,
-    });
+  waitUntil(
+    transporter
+      .sendMail({
+        from: `"Oasis Cleaning Website" <${smtpUser}>`,
+        to: recipient,
+        replyTo: d.email,
+        subject: `New Quote Request – ${d.fullName} (${d.serviceType})`,
+        text,
+        html,
+      })
+      .catch((err) => console.error('[quote] sendMail failed:', err))
+  );
 
-    return NextResponse.json({ ok: true });
-  } catch (err) {
-    console.error('[quote] sendMail failed:', err);
-    return NextResponse.json(
-      { ok: false, message: 'Could not send your request right now. Please try again.' },
-      { status: 500 }
-    );
-  }
+  return NextResponse.json({ ok: true });
 }
