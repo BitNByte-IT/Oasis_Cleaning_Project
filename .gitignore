@@ -26,6 +26,11 @@ yarn-error.log*
 .env*.local
 .env
 .env.local
+.env.production
+.env.staging
+
+# Claude Code local settings
+.claude/
 
 # vercel
 .vercel
