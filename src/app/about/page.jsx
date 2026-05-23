@@ -51,7 +51,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl lg:aspect-[5/4]">
+        <div className="relative aspect-[4/3] w-full overflow-hidden lg:aspect-[5/4]">
           <Image
             src="/images/about-living-room.png"
             alt="Modern dark living room with sectional sofa"
@@ -59,6 +59,22 @@ export default function AboutPage() {
             priority
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover"
+          />
+          {/* Left-side blend into dark background */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(to right, #000 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0) 45%)',
+            }}
+          />
+          {/* Top and bottom edge fade */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(to bottom, #000 0%, rgba(0,0,0,0) 15%, rgba(0,0,0,0) 85%, #000 100%)',
+            }}
           />
         </div>
       </section>
