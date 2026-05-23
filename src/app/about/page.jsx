@@ -5,6 +5,86 @@ import about from '@/data/about.json';
 
 export const dynamic = 'force-static';
 
+function TexasIcon({ className }) {
+  return (
+    <svg
+      viewBox="0 0 512 512"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <defs>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3.5" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      {/* Texas outline */}
+      <path
+        d="
+          M105 120
+          L270 120
+          L270 170
+          L360 170
+          L420 230
+          L420 300
+          L390 330
+          L360 320
+          L340 360
+          L300 400
+          L270 450
+          L220 430
+          L210 390
+          L170 390
+          L140 360
+          L140 310
+          L100 280
+          L110 230
+          L90 180
+          Z
+        "
+        stroke="currentColor"
+        strokeWidth="12"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        filter="url(#glow)"
+      />
+
+      {/* Austin glowing dot */}
+      <circle
+        cx="255"
+        cy="265"
+        r="10"
+        fill="currentColor"
+        filter="url(#glow)"
+      />
+
+      {/* Sparkle */}
+      <path
+        d="
+          M255 225
+          L262 255
+          L292 262
+          L262 269
+          L255 299
+          L248 269
+          L218 262
+          L248 255
+          Z
+        "
+        fill="currentColor"
+        opacity="0.9"
+        filter="url(#glow)"
+      />
+    </svg>
+  );
+}
+
 export const metadata = {
   title: 'About Us',
   description:
@@ -95,7 +175,17 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              <CallButton variant="outline" className="w-full" />
+              <CallButton variant="outline" className="w-full" label="CALL ERICA DIRECTLY" />
+
+              {/* "Can't wait to talk to y'all!" badge */}
+              <div className="inline-flex w-full items-center gap-4 rounded-xl border border-brand-border bg-gradient-to-br from-brand-surface/70 to-black px-5 py-4 shadow-[0_0_25px_rgba(0,212,255,0.08)]">
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-brand-teal/60 bg-black/40 text-brand-teal shadow-[0_0_18px_rgba(0,212,255,0.25)]">
+                  <TexasIcon className="h-7 w-7 text-brand-teal drop-shadow-[0_0_8px_rgba(0,212,255,0.8)]" />
+                </span>
+                <span className="font-script text-xl text-brand-gold">
+                  Can&apos;t wait to talk to y&apos;all!
+                </span>
+              </div>
             </div>
 
             {/* Manager statement */}
