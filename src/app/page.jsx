@@ -46,7 +46,7 @@ export default function HomePage() {
 
           {/* Right – hero image */}
           <div className="order-1 lg:order-2">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl lg:aspect-[5/4]">
+            <div className="relative aspect-[4/3] w-full overflow-hidden lg:aspect-[5/4]">
               <Image
                 src="/images/home-kitchen.png"
                 alt="Bright modern kitchen with marble island"
@@ -59,7 +59,14 @@ export default function HomePage() {
                 className="pointer-events-none absolute inset-0"
                 style={{
                   background:
-                    'linear-gradient(to right, #000 0%, rgba(0,0,0,0.4) 15%, rgba(0,0,0,0) 35%)',
+                    'linear-gradient(to right, #000 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0) 45%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.6) 90%, #000 100%)',
+                }}
+              />
+              <div
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  background:
+                    'linear-gradient(to bottom, #000 0%, rgba(0,0,0,0) 15%, rgba(0,0,0,0) 85%, #000 100%)',
                 }}
               />
             </div>

@@ -11,6 +11,8 @@ import {
   ShieldCheck,
   Clock,
   Users,
+  UserCheck,
+  Leaf,
 } from 'lucide-react';
 
 function HomeSparkle({ className }) {
@@ -56,11 +58,12 @@ export const serviceIcons = {
 };
 
 export const whyChooseIcons = {
-  shield: ShieldCheck,
+  'user-check': UserCheck,
   'sparkle-plus': SparkleStar,
   clock: Clock,
   users: Users,
   'shield-check': ShieldCheck,
+  leaf: Leaf,
 };
 
 export { Sparkles, Home };

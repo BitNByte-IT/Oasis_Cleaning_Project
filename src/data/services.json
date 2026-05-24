@@ -17,10 +17,11 @@
   "whyChooseUs": {
     "title": "WHY CLIENTS CHOOSE OASIS CLEANING",
     "items": [
-      { "icon": "shield", "label": "Reliable & Background Checked" },
+      { "icon": "user-check", "label": "Reliable & Background Checked" },
       { "icon": "sparkle-plus", "label": "Attention to Detail" },
       { "icon": "clock", "label": "Flexible Scheduling" },
       { "icon": "users", "label": "Friendly Professional Team" },
+         { "icon": "leaf", "label": "Eco-Friendly Products" },
       { "icon": "shield-check", "label": "Licensed & Insured" }
     ]
   },

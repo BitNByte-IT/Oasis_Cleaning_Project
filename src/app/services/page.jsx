@@ -91,7 +91,7 @@ export default function ServicesPage() {
           {services.whyChooseUs.title}
         </h2>
 
-        <div className="mt-8 grid grid-cols-2 gap-y-8 md:grid-cols-5 md:divide-x md:divide-brand-border">
+        <div className="mt-8 grid grid-cols-2 gap-y-8 sm:grid-cols-3 lg:grid-cols-6 lg:divide-x lg:divide-brand-border">
           {services.whyChooseUs.items.map((item) => {
             const Icon = whyChooseIcons[item.icon];
             return (

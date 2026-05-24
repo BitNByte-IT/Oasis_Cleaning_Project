@@ -166,13 +166,27 @@ export default function AboutPage() {
 
             {/* Manager image + call button */}
             <div className="flex flex-col gap-6">
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-brand-bg">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
                 <Image
                   src="/images/manager.jpeg"
                   alt={about.manager.name}
                   fill
                   sizes="(min-width: 1024px) 33vw, 100vw"
                   className="object-cover"
+                />
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      'linear-gradient(to right, #000 0%, rgba(0,0,0,0) 12%, rgba(0,0,0,0) 88%, #000 100%)',
+                  }}
+                />
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      'linear-gradient(to bottom, #000 0%, rgba(0,0,0,0) 12%, rgba(0,0,0,0) 75%, #000 100%)',
+                  }}
                 />
               </div>
               <CallButton variant="outline" className="w-full" label="CALL ERICA DIRECTLY" />
@@ -231,12 +245,11 @@ export default function AboutPage() {
               {/* Signature block */}
               <div className="mt-4 border-t border-brand-border/60 pt-6">
                 {/* Handwritten cursive signature via Dancing Script */}
-                <p className="font-script text-4xl text-white">
+                <p className="font-script text-4xl text-brand-gold">
                   {about.manager.name}
                 </p>
                 <p className="mt-1 font-medium text-brand-teal">{about.manager.name}</p>
                 <p className="text-brand-textMuted">{about.manager.title}</p>
-                <p className="text-brand-textMuted">{about.manager.tenure}</p>
               </div>
             </div>
           </div>
