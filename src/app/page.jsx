@@ -110,7 +110,7 @@ export default function HomePage() {
                 <h3 className="text-sm font-semibold tracking-[0.2em] text-brand-teal">
                   EMAIL US
                 </h3>
-                <ul className="mt-2 space-y-1">
+                <ul className="mt-2 space-y-1 text-sm md:text-base">
                   {site.company.emails.map((email) => (
                     <li key={email}>
                       <a
