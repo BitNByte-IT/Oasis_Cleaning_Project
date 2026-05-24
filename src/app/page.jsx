@@ -59,7 +59,7 @@ export default function HomePage() {
                 className="pointer-events-none absolute inset-0"
                 style={{
                   background:
-                    'linear-gradient(to right, #000 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0) 45%)',
+                    'linear-gradient(to right, #000 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0) 45%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.6) 90%, #000 100%)',
                 }}
               />
               <div
