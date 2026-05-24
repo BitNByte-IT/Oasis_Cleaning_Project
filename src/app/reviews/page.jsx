@@ -83,6 +83,9 @@ function ReviewCard({ review }) {
 
 export default async function ReviewsPage() {
   const data = await getGoogleReviews();
+  const googleEntry = site.social.find((s) => s.platform === 'google');
+  const googleReviewsUrl = googleEntry?.href || '#';
+  const googleWriteUrl = googleEntry?.writeReviewHref || googleReviewsUrl;
 
   return (
     <>
@@ -116,7 +119,7 @@ export default async function ReviewsPage() {
           <div className="hidden h-12 w-px bg-brand-border lg:block" />
 
           <a
-            href={site.social.find((s) => s.platform === 'google')?.href || '#'}
+            href={googleReviewsUrl}
             target="_blank"
             rel="noreferrer noopener"
             className="group inline-flex items-center gap-2 text-brand-teal transition-colors hover:text-brand-tealLight lg:ml-auto"
@@ -157,7 +160,7 @@ export default async function ReviewsPage() {
           </div>
 
           <a
-            href={site.social.find((s) => s.platform === 'google')?.href || '#'}
+            href={googleWriteUrl}
             target="_blank"
             rel="noreferrer noopener"
             className="inline-flex shrink-0 items-center gap-3 rounded-xl border border-brand-teal/60 bg-brand-surface/40 px-5 py-3 text-brand-teal transition-all hover:bg-brand-teal/10"
