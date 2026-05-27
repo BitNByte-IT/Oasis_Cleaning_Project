@@ -24,12 +24,8 @@
   ],
   "social": [
     { "platform": "facebook", "href": "https://www.facebook.com/share/14f13nBw6Vf/?mibextid=wwXIfr" },
-    { "platform": "instagram", "href": "https://www.instagram.com/oasiscleaningofaustinllc" },
-    {
-      "platform": "google",
-      "href": "https://www.google.com/search?sca_esv=1dc58019ac9a4f8a&hl=en-BD&gl=bd&sxsrf=ANbL-n479SYROjcVY4jEUGHm88gO0pylAg:1779592484090&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOTqLV80kN9S2E-m3ES_FV3fL46jpFDInFYPu1Lt-s-wd42Eu6JWaDLZuRcqjMZzGbhAZ4PvkLoJ5kj6GGQ1DxbHh8NT_&q=Oasis+Cleaning+Reviews&sa=X&ved=2ahUKEwiMuu_O-tCUAxUhYEEAHaDBEtsQ0bkNegQIKhAH&biw=1488&bih=746&dpr=1.25",
-      "writeReviewHref": "https://www.google.com/search?sca_esv=1dc58019ac9a4f8a&hl=en-BD&gl=bd&sxsrf=ANbL-n479SYROjcVY4jEUGHm88gO0pylAg:1779592484090&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOTqLV80kN9S2E-m3ES_FV3fL46jpFDInFYPu1Lt-s-wd42Eu6JWaDLZuRcqjMZzGbhAZ4PvkLoJ5kj6GGQ1DxbHh8NT_&q=Oasis+Cleaning+Reviews&sa=X&ved=2ahUKEwiMuu_O-tCUAxUhYEEAHaDBEtsQ0bkNegQIKhAH&biw=1488&bih=746&dpr=1.25#lrd=0x70e02b65ff9b19b:0x1f337919e651d56b,3,,,,"
-    }
+    { "platform": "instagram", "href": "https://www.instagram.com/oasiscleaningofaustinllc" }
+ 
   ],
   "footerLinks": {
     "title": "QUICK LINKS",
