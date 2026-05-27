@@ -2,6 +2,7 @@ import { Star, MessageCircle, ArrowRight } from 'lucide-react';
 import Ornament from '@/components/ui/Ornament';
 import { getGoogleReviews } from '@/lib/google-reviews';
 import site from '@/data/site.json';
+import ComingSoonLink from '@/components/ui/ComingSoonLink';
 
 export const revalidate = 604800;
 
@@ -118,15 +119,17 @@ export default async function ReviewsPage() {
 
           <div className="hidden h-12 w-px bg-brand-border lg:block" />
 
-          <a
-            href={googleReviewsUrl}
+          {/* <a */}
+            <ComingSoonLink
+            // href={googleReviewsUrl}
             target="_blank"
             rel="noreferrer noopener"
             className="group inline-flex items-center gap-2 text-brand-teal transition-colors hover:text-brand-tealLight lg:ml-auto"
           >
             <span className="font-medium">See all reviews on Google</span>
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          {/* </a> */}
+            </ComingSoonLink>
         </div>
       </section>
 
@@ -159,8 +162,9 @@ export default async function ReviewsPage() {
             </p>
           </div>
 
-          <a
-            href={googleWriteUrl}
+          {/* <a */}
+             <ComingSoonLink
+            // href={googleWriteUrl}
             target="_blank"
             rel="noreferrer noopener"
             className="inline-flex shrink-0 items-center gap-3 rounded-xl border border-brand-teal/60 bg-brand-surface/40 px-5 py-3 text-brand-teal transition-all hover:bg-brand-teal/10"
@@ -168,7 +172,8 @@ export default async function ReviewsPage() {
             <GoogleBadge className="h-5 w-5" />
             <span className="font-medium">Review Us</span>
             <ArrowRight className="h-4 w-4" />
-          </a>
+          {/* </a> */}
+          </ComingSoonLink>
         </div>
       </section>
     </>
